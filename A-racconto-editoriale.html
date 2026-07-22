@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confetteria Avvignano — Proposta A: Racconto Editoriale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital@0;1&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1c1a17; --paper:#F7F3EA; --rule:#1c1a17; --wine:#7A1F2B;}
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Libre Caslon Text', serif; font-size:19px; line-height:1.7;}
+  h1,h2{font-family:'Fraunces', serif; margin:0;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .col{max-width:760px; margin:0 auto; padding:0 32px;}
+
+  header{padding:26px 32px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--ink);}
+  .logo-img{height:40px;}
+  header nav{font-family:'Jost'; font-size:12px; letter-spacing:.12em; text-transform:uppercase;}
+  header nav a{margin-left:28px;}
+
+  /* Masthead */
+  .masthead{position:relative; padding:90px 32px 40px; text-align:center; overflow:hidden;}
+  .masthead .num{
+    position:absolute; top:-40px; left:50%; transform:translateX(-50%);
+    font-family:'Fraunces'; font-size:340px; color:var(--ink); opacity:.05; font-weight:600; line-height:1; white-space:nowrap;
+  }
+  .masthead .kicker{position:relative; font-family:'Jost'; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--wine); margin-bottom:22px;}
+  .masthead h1{position:relative; font-size:58px; line-height:1.12; max-width:820px; margin:0 auto;}
+  .masthead .dek{position:relative; max-width:520px; margin:26px auto 0; font-style:italic; font-size:20px; color:#4a4137;}
+
+  /* Lede with drop cap and float image */
+  .lede-wrap{max-width:900px; margin:70px auto 0; padding:0 32px; display:flex; gap:50px; align-items:flex-start;}
+  .lede-wrap .txt{flex:1.2;}
+  .lede-wrap .txt p:first-of-type::first-letter{
+    font-family:'Fraunces'; font-size:76px; float:left; line-height:.8; padding:6px 10px 0 0; color:var(--wine);
+  }
+  .lede-wrap .figure{flex:1; }
+  .lede-wrap .figure img{width:100%; height:340px; object-fit:cover;}
+  .lede-wrap .figure figcaption{font-family:'Jost'; font-size:11px; letter-spacing:.08em; color:#6b6154; margin-top:10px; text-transform:uppercase;}
+
+  /* Pull quote */
+  .pull-quote{max-width:640px; margin:90px auto; padding:0 32px; text-align:center;}
+  .pull-quote .rule{width:60px; height:1px; background:var(--ink); margin:0 auto 30px;}
+  .pull-quote blockquote{font-family:'Fraunces'; font-style:italic; font-size:34px; line-height:1.4; margin:0; color:var(--wine);}
+  .pull-quote cite{display:block; font-family:'Jost'; font-style:normal; font-size:11px; letter-spacing:.2em; text-transform:uppercase; margin-top:22px; color:#6b6154;}
+
+  /* Photo essay strip */
+  .essay{max-width:1200px; margin:0 auto 100px; padding:0 32px; display:grid; grid-template-columns:1fr 1.6fr 1fr; gap:20px;}
+  .essay figure{margin:0;}
+  .essay img{width:100%; height:380px; object-fit:cover;}
+  .essay figure:nth-child(1) img, .essay figure:nth-child(3) img{height:300px; margin-top:40px;}
+  .essay figcaption{font-family:'Jost'; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#6b6154; margin-top:10px; text-align:center;}
+
+  /* Continuing narrative columns */
+  .narrative{max-width:900px; margin:0 auto 90px; padding:0 32px; columns:2; column-gap:50px;}
+  .narrative p{margin:0 0 20px; font-size:18px;}
+  .narrative h2{font-size:26px; column-span:all; margin-bottom:24px; font-style:italic;}
+
+  /* Closing statement */
+  .closing{background:var(--ink); color:var(--paper); padding:100px 32px; text-align:center;}
+  .closing .kicker{font-family:'Jost'; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:#c9a15c; margin-bottom:20px;}
+  .closing h2{font-size:38px; max-width:640px; margin:0 auto 26px; font-style:italic;}
+  .closing p{max-width:520px; margin:0 auto 34px; color:#cfc7b8; font-size:18px;}
+  .btn{display:inline-block; padding:16px 38px; border:1px solid var(--paper); color:var(--paper); font-family:'Jost'; font-size:12px; letter-spacing:.14em; text-transform:uppercase;}
+  .btn:hover{background:var(--paper); color:var(--ink);}
+
+  footer{padding:60px 32px 34px; font-family:'Jost';}
+  .footer-grid{max-width:1200px; margin:0 auto 40px; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; font-size:15px;}
+  .footer-grid h4{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--wine); margin-bottom:12px;}
+  .footer-grid p, .footer-grid a{margin:0 0 6px; display:block; color:var(--ink);}
+  .footer-bottom{max-width:1200px; margin:0 auto; padding-top:22px; border-top:1px solid var(--ink); display:flex; justify-content:space-between; font-size:11px; color:#8a8071;}
+
+  @media (max-width:900px){
+    header nav{display:none;}
+    .masthead h1{font-size:34px;}
+    .masthead .num{font-size:160px;}
+    .lede-wrap{flex-direction:column;}
+    .essay{grid-template-columns:1fr;}
+    .essay figure:nth-child(1) img, .essay figure:nth-child(3) img{margin-top:0;}
+    .narrative{columns:1;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="logo-img" src="images/logo-chiaro.png" alt="Confetteria Avvignano">
+  <nav><a href="#">Storia</a><a href="#">Catalogo</a><a href="#">Bottega</a><a href="#">Contatti</a></nav>
+</header>
+
+<section class="masthead">
+  <div class="num">1883</div>
+  <div class="kicker">Un racconto lungo 140 anni</div>
+  <h1>Tradizione, eleganza, qualità: la storia di una bottega torinese.</h1>
+  <p class="dek">Dentro le vetrine sotto i portici di Piazza Carlo Felice, dove il tempo sembra essersi fermato al 1883.</p>
+</section>
+
+<div class="lede-wrap">
+  <div class="txt">
+    <p>C'è un luogo, a Torino, dove gli specchi raccontano più di cent'anni di storia e il profumo di cacao e nocciola accompagna ogni visitatore fin dalla soglia. È la Confetteria Avvignano, aperta nel 1883 e ancora oggi custode di una tradizione dolciaria che pochi altri indirizzi al mondo possono vantare.</p>
+    <p>Gianduiotti, praline, confetti: ogni prodotto nasce da una selezione rigorosa delle materie prime e da gesti artigianali tramandati nel tempo, senza compromessi sulla qualità.</p>
+  </div>
+  <figure class="figure">
+    <img src="images/facciata-1.png" alt="Facciata storica della Confetteria Avvignano">
+    <figcaption>Fig. I — La facciata in marmo, Piazza Carlo Felice</figcaption>
+  </figure>
+</div>
+
+<div class="pull-quote">
+  <div class="rule"></div>
+  <blockquote>"In certi luoghi, la storia si sente."</blockquote>
+  <cite>Confetteria Avvignano, dal 1883</cite>
+</div>
+
+<div class="essay">
+  <figure>
+    <img src="images/targa.png" alt="Targa storica della bottega">
+    <figcaption>Fig. II — L'insegna originale</figcaption>
+  </figure>
+  <figure>
+    <img src="images/interno.jpg" alt="Interno della bottega">
+    <figcaption>Fig. III — Il salone principale, stucchi e lampadari d'epoca</figcaption>
+  </figure>
+  <figure>
+    <img src="images/gianduiotti-vassoio.png" alt="Gianduiotti Confetteria Avvignano">
+    <figcaption>Fig. IV — I gianduiotti, ricetta originale</figcaption>
+  </figure>
+</div>
+
+<div class="narrative">
+  <h2>Un'eredità che si assaggia</h2>
+  <p>Il restauro conservativo ha riportato alla luce cristalli, specchi e soffitti finemente decorati, rendendo la bottega un vero e proprio patrimonio artistico riconosciuto tra i Locali Storici d'Italia.</p>
+  <p>Ma è dietro al bancone che questa storia continua a scriversi ogni giorno: nella selezione delle nocciole Piemonte I.G.P., nella lavorazione delle praline, nella cura con cui ogni confezione regalo viene chiusa a mano.</p>
+  <p>Una tappa amata dai torinesi che tornano da generazioni, e una scoperta indimenticabile per chi varca la soglia per la prima volta, spesso in cerca di un autentico assaggio di Torino da portare con sé.</p>
+  <p>Oggi la Confetteria Avvignano continua questo cammino, fedele allo stesso principio che ne ha guidato ogni scelta dal 1883: tradizione, eleganza, qualità.</p>
+</div>
+
+<section class="closing">
+  <div class="kicker">Vieni a scoprirla</div>
+  <h2>Un capitolo che continua, sotto i portici di Torino.</h2>
+  <p>Ti aspettiamo in Piazza Carlo Felice, 50, per scoprire di persona gianduiotti, praline e specialità artigianali.</p>
+  <a class="btn" href="#">Scopri le nostre specialità</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><img class="logo-img" src="images/logo-scuro.png" alt="Confetteria Avvignano" style="height:36px;"></div>
+    <div><h4>Dove siamo</h4><p>Piazza Carlo Felice, 50<br>10121 Torino</p></div>
+    <div><h4>Orari</h4><p>Lunedì – Sabato<br>9:30 – 19:30</p></div>
+    <div><h4>Contatti</h4><a href="tel:+39011541992">+39 011 541992</a><a href="mailto:info@confetteria-avvignano.it">info@confetteria-avvignano.it</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Confetteria Avvignano</span><span>Piazza Carlo Felice, 50 — Torino</span></div>
+</footer>
+
+</body>
+</html>
